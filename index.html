@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- css file -->
+    <link rel="stylesheet" href="style.css">
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+</head>
+
+<body>
+    <!-- header section -->
+    <header class="header">
+        <div class="header-items">
+            <div class="logo">
+                <p>Trawell.</p>
+            </div>
+            <nav class="navbar">
+
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#gallery">Gallery</a>
+                <a href="#review">Review</a>
+                <a href="#blog">Blog</a>
+                <a href="#contact">Contact</a>
+
+            </nav>
+            <div id="menuBtn" class="fas fa-bars"></div>
+        </div>
+    </header>
+    <!-- header section end -->
+
+    <!-- home section -->
+
+    <section class="home" id="home">
+        <div class="home-items">
+            <div class="home-info">
+                <h3>Your travel, your rule</h3>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque fugit vero, explicabo soluta sunt tempore incidunt repellendus unde. Provident, quisquam.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- home section end -->
+
+
+
+    <!-- about section -->
+
+    <section class="about" id="about">
+        <h3 class="heading">About <span>Us</span></h3>
+        <div class="about-items">
+            <img src="images/pexels-taryn-elliott-3889843.jpg" alt="">
+            <div class="about-info">
+                <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, numquam! Voluptas quisquam eius nesciunt eaque veritatis cumque. Accusamus aliquam at rerum voluptatem molestiae est et quae officia necessitatibus laudantium qui perferendis
+                    asperiores quod sed, illum porro eaque iure suscipit expedita?
+                    <br> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, omnis mollitia. Sunt impedit vel animi vitae quos aliquam quae assumenda. Exercitationem eaque rerum quod cum delectus dignissimos reiciendis illo? Porro vitae
+                    maxime eaque velit fugiat, aspernatur ab autem ratione, laborum beatae enim pariatur! Quasi quibusdam assumenda autem eaque fugit perspiciatis.
+                </p>
+
+                <a href="#" class="btn">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- about section end -->
+
+    <!-- gallery section -->
+
+    <section class="gallery" id="gallery">
+        <h3 class="heading">Our <span>Gallery</span></h3>
+        <div class="gallery-items">
+            <img src="images/pexels-jaime-reimer-2662116.jpg" alt="">
+            <img src="images/pexels-pierre-blaché-2901209.jpg" alt="">
+            <img src="images/pexels-rachel-claire-4825701.jpg" alt="">
+            <img src="images/pexels-taryn-elliott-3889660.jpg" alt="">
+            <img src="images/pexels-arthouse-studio-4571822.jpg" alt="">
+            <img src="images/pexels-michael-block-3225528.jpg" alt="">
+            <img src="images/pexels-roman-odintsov-4871012.jpg" alt="">
+            <img src="images/pexels-sam-kolder-2387873.jpg" alt="">
+            <img src="images/pexels-roman-odintsov-4871012.jpg" alt="">
+        </div>
+    </section>
+
+    <!-- gallery section end -->
+
+    <!-- review section -->
+
+    <section class="review" id="review">
+        <h3 class="heading">Customer <span>Review</span></h3>
+        <div class="review-items">
+            <div class="box">
+                <div id="data">
+
+                    <script>
+                        var ajax = new XMLHttpRequest();
+                        var method = "GET";
+                        var url = "./data.php";
+                        var asynchoronous = true;
+
+                        ajax.open(method, url, asynchoronous);
+
+                        ajax.send();
+
+                        ajax.onreadystatechange = function() {
+                            if (this.readyState == 4 && this.status == 200) {
+
+                                var data = JSON.parse(this.responseText);
+
+                                var html = "";
+
+                                var a = 0;
+                                setInterval(function() {
+
+                                    var ad = data[a].ad;
+                                    var soyad = data[a].soyad;
+                                    var yorum = data[a].yorum;
+
+                                    html = yorum + "<br><br><br><br>" + ad + " " + soyad;
+
+                                    $("#data").html(html);
+                                    a++;
+
+                                    if (a == 4) {
+                                        a = 0;
+                                    }
+                                }, 2000);
+                            }
+                        };
+                    </script>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- review section end -->
+
+    <!-- blog section -->
+
+    <section class="blog" id="blog">
+        <h3 class="heading">Our <span>Blogs</span></h3>
+        <div class="blog-items">
+            <div class="box">
+                <img src="images/pexels-jaime-reimer-2662116.jpg" alt="">
+                <h3>Blog 1</h3>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Similique iusto, explicabo repudiandae fugiat quis, dolor, labore adipisci vero provident totam nemo magni aliquid? Asperiores a exercitationem eius tempore?</p>
+            </div>
+            <div class="box">
+                <img src="images/pexels-asad-photo-maldives-1591373.jpg" alt="">
+                <h3>Blog 2</h3>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Similique iusto, explicabo repudiandae fugiat quis, dolor, labore adipisci vero provident totam nemo magni aliquid? Asperiores a exercitationem eius tempore? </p>
+            </div>
+            <div class="box">
+                <img src="images/pexels-pierre-blaché-2901209.jpg" alt="">
+                <h3>Blog 3</h3>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Similique iusto, explicabo repudiandae fugiat quis, dolor, labore adipisci vero provident totam nemo magni aliquid? Asperiores a exercitationem eius tempore? </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- blog section end -->
+
+    <!-- contact section -->
+
+    <section class="contact" id="contact">
+        <div class="container">
+            <h3 class="heading">Contact <span>Us</span></h3>
+            <div class="contact-items">
+                <form action="">
+                    <input type="text" placeholder="Type your name here" name="" id="">
+                    <input type="number" placeholder="Type your number here" name="" id="">
+                    <input type="email" placeholder="Type your email here" name="" id="">
+                    <textarea name="" minlength="0" maxlength="240" placeholder="Type your message here" id="" cols="30" rows="10"></textarea>
+                    <input type="submit" value="Submit" name="" id="">
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- contact section end -->
+
+    <!-- footer section -->
+
+    <footer class="footer">
+        <div class="footer-items">
+            <div class="row1">
+                <p class="phone">+123 456 78 90</p>
+            </div>
+            <div class="row2">
+                <h3 class="heading">Our Branches</h3>
+                <ul>
+                    <li><a href="#"><i class="fa-solid fa-location-dot"></i>Turkey</a></li>
+                    <li><a href="#"><i class="fa-solid fa-location-dot"></i>USA</a></li>
+                    <li><a href="#"><i class="fa-solid fa-location-dot"></i>Russia</a></li>
+                    <li><a href="#"><i class="fa-solid fa-location-dot"></i>China</a></li>
+                    <li><a href="#"><i class="fa-solid fa-location-dot"></i>Canada</a></li>
+                </ul>
+            </div>
+            <div class="row3">
+                <h3 class="heading">Contact Us</h3>
+                <ul>
+                    <li><a href="#"><i class="fa-solid fa-phone"></i>+123 456 78 90</a></li>
+                    <li><a href="#"><i class="fa-solid fa-envelope"></i>burakbaloglu148@gmail.com</a></li>
+                    <li><a href="#"><i class="fa-solid fa-location-dot"></i>Bozüyük, Bilecik/Turkey</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <!-- social media accounts -->
+
+    <section class="social-media-accounts">
+        <ul>
+            <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+            <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+            <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+        </ul>
+    </section>
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
