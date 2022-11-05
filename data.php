@@ -1,7 +1,6 @@
 <?php
 
 $conn = mysqli_connect("localhost","root","","proje");
-//$conn = mysqli_connect("localhost","121620191010","0xRBiLr40My","db_121620191010");
 
 
 
